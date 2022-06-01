@@ -1,0 +1,12 @@
+<div class="p-3 mt-5">
+    <ul class="container-list">
+        <li *ngFor="let person of persons; let i = index">
+            <app-card
+                [name]="person.name"
+                [bio]="person.bio"
+                [photo]="person.photo"
+                (onDelete)="handleDelete(i)"
+            ></app-card>
+        </li>
+    </ul>
+</div>

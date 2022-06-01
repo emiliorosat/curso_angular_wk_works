@@ -1,0 +1,19 @@
+<div class="element shadow p-2">
+    <div class="content-block">
+        <p>
+            <img [src]="photo" alt="photo">
+        </p>
+        <p>
+            <b>
+                {{name}}
+            </b>
+        </p>
+        <p class="text-justify">{{bio.substring(0, 100)}}...</p>
+    </div>
+    <p >
+        <button type="button" class="btn btn-danger" (click)="handleClick($event)">
+            <i class="bi bi-trash"></i>
+            Eliminar
+        </button>
+    </p>
+</div>

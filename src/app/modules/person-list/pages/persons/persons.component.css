@@ -1,0 +1,7 @@
+.container-list {
+    display: inline-flex;
+    gap: 1rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
