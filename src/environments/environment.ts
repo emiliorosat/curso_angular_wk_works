@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: "https://api-mongo-node.herokuapp.com/api"
+  //api: "http://localhost:5000/api"
 };
 
 /*

@@ -1,0 +1,8 @@
+<div class="container bg-white mt-5 p-4">
+    <h2 class="text-info mb-3">Agregar Ingreso</h2>
+    <app-form 
+    [type]="1"
+    (onCancel)="handleCancel()"
+    (onSubmit)="handleSubmit($event)"
+    ></app-form>
+</div>

@@ -6,6 +6,7 @@ import { PersonListModule } from './modules/person-list/person-list.module';
 import { PresentationModule } from './modules/presentation/presentation.module';
 import { AppComponent } from './root/app.component';
 import { NavbarComponent } from './root/components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarComponent } from './root/components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     PresentationModule,
-    PersonListModule
+    PersonListModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

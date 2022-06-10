@@ -1,0 +1,23 @@
+<table class="table table-responsive table-striped" matSort (matSortChange)="sortData($event)">
+    <thead>
+        <tr>
+            <th mat-sort-header="date">Fecha</th>
+            <th mat-sort-header="concept">Descripcion</th>
+            <th mat-sort-header="spent" *ngIf="show == 1 || show == 0">Gasto</th>
+            <th mat-sort-header="income" *ngIf="show == 2 || show == 0">Ingreso</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let record of sortedRecords">
+            <td>{{record.date | date : "mediumDate"}}</td>
+            <td>{{record.concept}}</td>
+            <td *ngIf="show == 1 || show == 0">{{record.spent <= 0 ? '' : record.spent| currency }}</td>
+            <td *ngIf="show == 2 || show == 0">{{record.income <= 0 ? '' : record.income | currency }}</td>
+        </tr>
+    </tbody>
+    <!-- <tfoot>
+        <tr>
+            <td colspan="4" class="text-end"><span class="h5">Total:</span> {{400 | currency }}</td>
+        </tr>
+    </tfoot> -->
+</table>

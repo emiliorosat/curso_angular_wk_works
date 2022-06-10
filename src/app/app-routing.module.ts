@@ -7,7 +7,9 @@ const routes: Routes = [
   {path: 'presentation', component: PresentationComponent},
   {path: 'personas', component: PersonsComponent},
   {path: 'proyecto', loadChildren: ()=> import('./modules/project/project.module')
-  .then(m => m.ProjectModule)}
+  .then(m => m.ProjectModule)},
+  {path: '**', redirectTo: 'presentation'}
+
 ];
 
 @NgModule({

@@ -1,1 +1,43 @@
-<p>bank works!</p>
+
+<div class="container bg-white my-5 p-3">
+    <div class="p-3 w-100">
+        <h2 class="text-info">Mis Transacciones</h2>
+        <div class="float-end">
+            <div class="btn-group mb-2">
+                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-plus-circle"></i>  Agregar
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="nuevo-ingreso" ><i class="bi bi-cash-stack"></i> Nuevo Ingreso</a></li>
+                    <li><a class="dropdown-item" routerLink="nuevo-gasto" ><i class="bi bi-cash-coin"></i> Nuevo Gasto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-between w-100 mx-0 mb-3">
+
+            <div class="btn-group col-lg-2 col-md-4 col-sm-12" role="group" aria-label="Basic example">
+                <button (click)="selectShow(0)" type="button" class="btn " [ngClass]="{'btn-primary': show == 0, 'btn-secondary': show != 0 }" >Todos</button>
+                <button (click)="selectShow(1)" type="button" class="btn" [ngClass]="{'btn-primary': show == 1, 'btn-secondary': show != 1 }" >Gastos</button>
+                <button (click)="selectShow(2)" type="button" class="btn" [ngClass]="{'btn-primary': show == 2, 'btn-secondary': show != 2 }" >Ingresos</button>
+              </div>
+                
+                <div class="input-group col-lg-2 col-md-4 col-sm-12 mt-2" style="width: auto;">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Buscar por {{typeSearch}}</button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" (click)="handleFilterBy(0)">Descripcion</a></li>
+                      <li><a class="dropdown-item" (click)="handleFilterBy(1)" >Fecha</a></li>
+                      <li><a class="dropdown-item" (click)="handleFilterBy(2)" >Ingreso</a></li>
+                      <li><a class="dropdown-item" (click)="handleFilterBy(3)" >Gasto</a></li>
+                    </ul>
+                    <input [type]="type" (input)="handleInput($event)" class="form-control " placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon2">
+                    <a class="input-group-text" id="basic-addon2"><i class="bi bi-search"></i></a>
+                  </div>
+
+       
+
+          
+    </div>
+    <app-table [sortedRecords]="records" [records]="records" [show]="show" ></app-table>
+    
+</div>
